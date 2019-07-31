@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
     stages {
         stage('P1') {
             agent { docker { image 'maven:3.3.3' }}
