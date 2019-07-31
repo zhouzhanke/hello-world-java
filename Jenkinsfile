@@ -21,8 +21,8 @@ pipeline {
                     echo "--------------------------------------------------"
                     echo "Hello JDK"
                     java -version
-                    Javac HelloWorld.java
-                    Java HelloWorld
+                    docker run --rm -v $PWD:/app -w /app demo/oracle-java:8 javac HelloWorld.java
+                    docker run --rm -v $PWD:/app -w /app demo/oracle-java:8 java HelloWorld
                     echo "--------------------------------------------------"
                 '''
             }
