@@ -1,9 +1,9 @@
 pipeline {
-    agent {any}
+    agent any
     stages {
         stage('Build') {
             steps {
-                agent { docker  image 'maven:3.3.3'  }
+                agent { docker 'maven:3.3.3' }
                 echo "--------------------------------------------------"
                 sh 'mvn --version'
                 sh 'echo "Hello World"'
@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                agent { docker  image 'openjdk:8-jre'  }
+                agent { docker 'openjdk:8-jre'  }
                 sh '''
                     echo "--------------------------------------------------"
                     echo "Hello JDK"
