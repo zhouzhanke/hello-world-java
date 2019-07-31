@@ -5,8 +5,8 @@ pipeline {
             steps {
                 sh 'mvn --version'
                 sh '''
-                Javac HelloWorld.java
-                Java HelloWorld
+                mvn compile  
+                mvn exec:java -Dexec.mainClass="com.vineetmanohar.module.Main"  
                 '''
                 sh 'echo "Hello World"'
                 sh '''
