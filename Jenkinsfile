@@ -15,7 +15,7 @@ pipeline {
             }
         }
         stage('test') {
-            agent { docker { image 'openjdk:8-jre' }}
+            agent { docker { image 'openjdk:8-jdk' }}
             steps {
                 sh '''
                     echo "--------------------------------------------------"
