@@ -1,5 +1,9 @@
 pipeline {
     agent none
+        environment {
+        DISABLE_AUTH = 'true'
+        DB_ENGINE    = 'sqlite'
+    }
     stages {
         stage('P1') {
             agent { docker { image 'maven:3.3.3' }}
