@@ -9,6 +9,7 @@ pipeline {
                     mvn --version
                     echo "Hello P1"
                     javac HelloWorld.java
+                    java HelloWorld
                     echo "---------------------------------------------------------------------"
                 '''
             }
