@@ -5,8 +5,8 @@ pipeline {
             agent { docker { image 'maven:3.3.3' }}
             steps {
                 sh '''
-                    mvn --version'
-                    echo "Hello P1"'
+                    mvn --version
+                    echo "Hello P1"
                     echo "-----------------------"
                 '''
             }
