@@ -10,8 +10,8 @@ pipeline {
             steps {
                 sh '''
                     echo "---------------------------------------------------------------------"
-                    mvn --version
                     echo "Hello P1"
+                    mvn --version
                     javac HelloWorld.java
                     java HelloWorld
                     echo "---------------------------------------------------------------------"
