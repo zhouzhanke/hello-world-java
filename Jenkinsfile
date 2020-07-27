@@ -5,10 +5,11 @@ pipeline {
         DB_ENGINE    = 'sqlite'
     }
     stages {
-        stage('P1') {
+        stage('Build') {
             agent {
                 docker {
                     image 'maven:latest'
+                    args '-v ~/.m2:/root/.m2'
                 }
             }
             steps {
@@ -17,8 +18,7 @@ pipeline {
                     echo "---------------------------------------------------------------------"
                     echo "Hello P1"
                     mvn --version
-                    javac HelloWorld.java
-                    java HelloWorld
+                    mvn clean package
                     echo "---------------------------------------------------------------------"
                 '''
             }
@@ -34,7 +34,6 @@ pipeline {
                     echo "---------------------------------------------------------------------"
                     echo "Hello P2 JDK"
                     java -version
-                    javac HelloWorld.java
                     java HelloWorld
                     echo "---------------------------------------------------------------------"
                 '''
