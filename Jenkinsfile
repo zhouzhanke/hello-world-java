@@ -16,14 +16,13 @@ pipeline {
                 sh '''
                     docker --version
                     echo "---------------------------------------------------------------------"
-                    echo "Hello P1"
                     mvn --version
-                    mvn clean package
+                    sh 'mvn -B -DskipTests clean package'
                     echo "---------------------------------------------------------------------"
                 '''
             }
         }
-        stage('P2') {
+        stage('Test') {
             agent {
                 docker {
                     image 'openjdk:8-jdk'
@@ -32,7 +31,7 @@ pipeline {
             steps {
                 sh '''
                     echo "---------------------------------------------------------------------"
-                    echo "Hello P2 JDK"
+                    sh 'mvn test'
                     java -version
                     java HelloWorld
                     echo "---------------------------------------------------------------------"
