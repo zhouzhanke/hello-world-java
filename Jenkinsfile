@@ -13,6 +13,7 @@ pipeline {
             }
             steps {
                 sh '''
+                    docker --version
                     echo "---------------------------------------------------------------------"
                     echo "Hello P1"
                     mvn --version
