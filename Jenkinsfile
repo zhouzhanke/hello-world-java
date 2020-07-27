@@ -6,7 +6,7 @@ pipeline {
     }
     stages {
         stage('P1') {
-            agent { docker { image 'maven:3.3.3', image 'docker:latest' }}
+            agent { docker { image 'maven:3.3.3'}}
             steps {
                 sh '''
                     echo "---------------------------------------------------------------------"
@@ -19,7 +19,7 @@ pipeline {
             }
         }
         stage('P2') {
-            agent { docker { image 'openjdk:8-jdk', image 'docker:latest' }}
+            agent { docker { image 'openjdk:8-jdk'}}
             steps {
                 sh '''
                     echo "---------------------------------------------------------------------"
