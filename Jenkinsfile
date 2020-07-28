@@ -28,6 +28,7 @@ pipeline {
             steps {
                 sh '''
                     java -version
+                    javac HelloWorld.java
                     java HelloWorld
                 '''
             }
