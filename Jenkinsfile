@@ -14,7 +14,6 @@ pipeline {
             }
             steps {
                 sh '''
-                    docker --version
                     echo "---------------------------------------------------------------------"
                     mvn --version
                     sh 'mvn -B -DskipTests clean package'
