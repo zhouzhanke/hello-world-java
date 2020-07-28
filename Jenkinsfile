@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh '''
                     mvn --version
-                    javac HelloWorld
+                    javac HelloWorld.java
 //                     sh 'mvn -B -DskipTests clean package'
                 '''
             }
