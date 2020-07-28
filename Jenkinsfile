@@ -14,10 +14,9 @@ pipeline {
             }
             steps {
                 sh '''
-                    echo "---------------------------------------------------------------------"
                     mvn --version
-                    sh 'mvn -B -DskipTests clean package'
-                    echo "---------------------------------------------------------------------"
+                    javac HelloWorld
+//                     sh 'mvn -B -DskipTests clean package'
                 '''
             }
         }
@@ -29,11 +28,9 @@ pipeline {
             }
             steps {
                 sh '''
-                    echo "---------------------------------------------------------------------"
-                    sh 'mvn test'
+//                     sh 'mvn test'
                     java -version
                     java HelloWorld
-                    echo "---------------------------------------------------------------------"
                 '''
             }
         }
