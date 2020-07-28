@@ -16,7 +16,6 @@ pipeline {
                 sh '''
                     mvn --version
                     javac HelloWorld.java
-//                     sh 'mvn -B -DskipTests clean package'
                 '''
             }
         }
@@ -28,7 +27,6 @@ pipeline {
             }
             steps {
                 sh '''
-//                     sh 'mvn test'
                     java -version
                     java HelloWorld
                 '''
